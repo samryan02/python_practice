@@ -1,6 +1,6 @@
 import pygame
 from random import randint
-Word_list = ["computer", "surfboard", "robot", "trophy", "printer", " globe"]
+Word_list = ["computer", "surfboard", "robot", "trophy", "printer", "globe"]
 randomNum = randint(0, 5)
 randomWord = Word_list[randomNum]
 #print(Word_list[randomWord])
@@ -12,9 +12,10 @@ for j in range(len(randomWord)):
     word.append(" _ ")
 tries = 10
 playing = True
+
 while playing:
     
-    print("tries left: ", tries)
+    
     print("letters Avalible: " , lettersAvalible)
     print("Letters used: " , lettersUsed)
     print(" word so far: ")
@@ -33,10 +34,19 @@ while playing:
     for l in range(len(randomWord)):
         if letterPlayed == randomWord[l]:
             word[l] = letterPlayed
-        else:
-            tries -=1
-#comment
+        
 
+    print("tries left: ", tries)
+
+    tempword = ""
+    r = 1
+    for r in range(len(word)):
+        tempword = tempword + word[r]
     
 
-    
+    if tempword == randomWord:
+        playing = False
+    else:
+        tries -= 1
+        print("tries left: " ,tries)
+print("you win the word was: ", randomWord)  
