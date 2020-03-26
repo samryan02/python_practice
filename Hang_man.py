@@ -1,7 +1,7 @@
 import pygame
 from random import randint
-Word_list = ["computer", "surfboard", "robot", "trophy", "printer", "globe"]
-randomNum = randint(0, 5)
+Word_list = ["computer", "surfboard", "robot", "trophy", "printer", "globe", "moniter", "magnolia", "renovation"]
+randomNum = randint(0, 8)
 randomWord = Word_list[randomNum]
 #print(Word_list[randomWord])
 lettersAvalible = ["a", "b", "c", "d" ,"e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
