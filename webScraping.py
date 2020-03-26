@@ -1,7 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
-page = requests.get("http://dataquestio.github.io/web-scraping-pages/simple.html")
+ 
+base_url = 'http://www.nytimes.com'
+r = requests.get(base_url)
+soup = BeautifulSoup(r.content, 'html.parser')
 
-soup = BeautifulSoup(page.content, 'html.parser')
-
-print(soup)
+for story_heading in soup.find_all(class_="story-heading"): 
+    if story_heading.a: 
+        print(story_heading.a.text.replace("\n", " ").strip())
+    else: 
+        print(story_heading.contents[0].strip())
